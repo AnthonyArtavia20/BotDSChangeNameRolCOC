@@ -1,0 +1,18 @@
+# Entorno virtual de Python
+.venv/
+env/
+ENV/
+venv/
+*.egg-info/
+
+# Python bytecode
+_pycache_/
+*.py[cod]
+
+# Archivos temporales o del editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.DS_Store
