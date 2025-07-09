@@ -1,5 +1,10 @@
+import os
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.members = True #Para poder detectar los miembros en el server
@@ -7,9 +12,9 @@ intents.message_content = True # PAra poder leer los comandos como los de cambio
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-TOKEN = "MTM5MjU4MzU2ODg3Mzc1NDc5NA.GGielr.c4lqtR1B_5_qTzRYb4MRZHeEFC9qsEUeuWv6_U"
-ROL_VERIFICADO = "Nuevo Miembro" #Este rol es el que creé como forma de identificar aquellos que ya se cambiaron el apodo y tienen acceso al resto de canales, no solo el de bienvenida.
-ROL_PENDIENTE = "Sin Verificar(PendienteDeNombre)" #Como su nombre dice, este es para cuando la persona reciente entra al server y no se ha cambiado el nombre, osea pendiente de asignar rol.
+TOKEN = os.getenv('DISCORD_TOKEN')
+ROL_VERIFICADO = os.getenv('ROL_VERIFICADO') #Este rol es el que creé como forma de identificar aquellos que ya se cambiaron el apodo y tienen acceso al resto de canales, no solo el de bienvenida.
+ROL_PENDIENTE = os.getenv('ROL_PENDIENTE') #Como su nombre dice, este es para cuando la persona reciente entra al server y no se ha cambiado el nombre, osea pendiente de asignar rol.
 
 @bot.event
 async def on_ready():

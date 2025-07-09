@@ -16,3 +16,8 @@ _pycache_/
 .vscode/
 .idea/
 .DS_Store
+
+# Para la parte del Token dado por discord
+.env
+__pycache__/
+*.pyc
