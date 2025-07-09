@@ -12,7 +12,7 @@ intents.message_content = True # PAra poder leer los comandos como los de cambio
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN') #Este se obtiene desde Discord Developers y ahorita está oculto para que no esté expuesto
 ROL_VERIFICADO = os.getenv('ROL_VERIFICADO') #Este rol es el que creé como forma de identificar aquellos que ya se cambiaron el apodo y tienen acceso al resto de canales, no solo el de bienvenida.
 ROL_PENDIENTE = os.getenv('ROL_PENDIENTE') #Como su nombre dice, este es para cuando la persona reciente entra al server y no se ha cambiado el nombre, osea pendiente de asignar rol.
 
